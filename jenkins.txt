@@ -1,0 +1,53 @@
+ 1  sudo apt-get update
+    2  cd/opt/
+    3  mkdir /opt/java && cd /opt/java
+    4  java -version
+    5  jdk-9.0.4_linux-x64_bin.tar.gz
+    6  cd /opt/java
+    7  wget --no-cookies --no-check-certificate --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/9.0.4+11/c2514751926b4512b076cc82f959763f/jdk-9.0.4_linux-x64_bin.tar.gz
+    8   tar -zxvf jdk-9.0.4_linux-x64_bin.tar.gz
+    9  cd jdk-9.0.4/
+   10  # update-alternatives --install /usr/bin/java java /opt/java/jdk-9.0.4/bin/java 100
+   11  # update-alternatives --config java
+   12  cd jdk-9.0.4/
+   13  tar -zxvf jdk-9.0.4_linux-x64_bin.tar.gz
+   14  update-alternatives --install /usr/bin/javac javac /opt/java/jdk-9.0.4/bin/javac 100
+   15  update-alternatives --config javac
+   16  update-alternatives --install /usr/bin/jar jar /opt/java/jdk-9.0.4/bin/jar 100
+   17  update-alternatives --config jar
+   18  export JAVA_HOME=/opt/java/jdk-9.0.4/
+   19  export JRE_HOME=/opt/java/jdk-9.0.4/jre
+   20  export PATH=$PATH:/opt/java/jdk-9.0.4/bin:/opt/java/jdk-9.0.4/jre/bin
+   21  java -version
+   22  sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
+   23  sudo rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key
+   24  sudo yum install jenkins
+   25  service jenkins start
+   26  cat/var/lib/jenkins/secrets/initialAdminPassword
+   27  cat /var/lib/jenkins/secrets/initialAdminPassword
+   28  service jenkins status
+   29  service jenkins start
+   30  java -version
+   31  cd .
+   32  cd
+   33  yum remove java1.7.0
+   34  sudo yum remove java-1.7.0-openjdk
+   35  cd /opt/
+   36  wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u161-b12/2f38c3b165be4555a1fa6e98c45e0808/jdk-8u161-linux-x64.tar.gz"
+   37  tar xzf jdk-8u161-linux-x64.tar.gz
+   38  java -version
+   39  cd /opt/jdk1.8.0_161/
+   40  alternatives --install /usr/bin/java java /opt/jdk1.8.0_161/bin/java 2
+   41  alternatives --config java
+   42  java -version
+   43  export JAVA_HOME=/opt/jdk1.8.0_161
+   44  export JRE_HOME=/opt/jdk1.8.0_161/jre
+   45  export PATH=$PATH:/opt/jdk1.8.0_161/bin:/opt/jdk1.8.0_161/jre/bin
+   46  sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
+   47  sudo rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key
+   48  sudo yum install jenkins
+   49  service jenkins start
+   50  service jenkins status
+   51  jenkins -version
+   52  cat /var/lib/jenkins/secrets/initialAdminPassword
+   53  history
